@@ -1,6 +1,6 @@
-package gerenciamentoFuncionarios;
+package Departamento;
 
-public enum Departamento {
+public enum DepartamentoEnum {
     FINANCEIRO(1, "Departamento Financeiro"),
     RECURSOS_HUMANOS(2, "Departamento de Recursos Humanos"),
     TECNOLOGIA(3, "Departamento de Tecnologia da Informação"),
@@ -10,7 +10,7 @@ public enum Departamento {
     private int id;
     private String descricao;
 
-    Departamento(int i, String s) {
+    DepartamentoEnum(int i, String s) {
     }
 
     public int getId() {
