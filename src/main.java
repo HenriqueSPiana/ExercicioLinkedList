@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-
         LinkedList<Funcionario> listaFuncionario = new LinkedList<>();
         Departamento departamento = new Departamento(listaFuncionario);
 
@@ -17,11 +16,10 @@ public class main {
                     (i%2 ==0 ?DepartamentoEnum.RECURSOS_HUMANOS:DepartamentoEnum.TECNOLOGIA)));
         };
 
-
-
-        try ( Scanner leitor = new Scanner(System.in);){
-
-
+        boolean executar = true;
+        while (executar) {
+            try{
+            Scanner IO = new Scanner(System.in);
             System.out.println("SISTEMA DE CADASTRO DE FUNCIONARIOS \n" +
                     "--------------------------------\n" +
                     "QUAL FUNÇÃO DESEJA FAZER? \n" +
@@ -29,34 +27,24 @@ public class main {
                     "2 - Buscar um funcionario\n" +
                     "3 - Mostrar todos os funcionarios\n" +
                     "4 - Reordenar lista de funcionario\n" +
-                    "-- SAIR--");
-            int escolha = leitor.nextInt();
+                    "5 -- SAIR--");
+            int escolha = IO.nextInt();
+            IO.nextLine();
 
-            switch (escolha){
-                case 1 ->
+            switch (escolha) {
+                case 1 -> departamento.cadastrarFuncionario(IO);
+                case 5 -> {
+                    executar = false;
+                }
             }
-        } catch (Exception e) {
-            System.out.println("Você escolheu sair ");
+        }catch (Exception e){
+                System.out.println("Valor invalido, tente novamente");
+                throw new RuntimeException(e);
+
+            }
+
         }
-        
-
-                
-        
-
-
-
-
-
-
-
-
-
 
     }
-
-
-
-
-
 
 }
