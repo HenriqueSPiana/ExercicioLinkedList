@@ -11,6 +11,15 @@ public class Departamento {
         return funcionarios;
     }
 
+    public void getFuncionariosByName(String nomeFuncionario) {
+        for (int i = 0; i <funcionarios.size() ; i++) {
+            if (funcionarios.get(i).getNome().toLowerCase() == nomeFuncionario.toLowerCase()){
+                System.out.println( "Funcionario Encontrado "+ funcionarios.get(i));
+            };
+            System.out.println("funcionario não encontrado");
+        }
+    }
+
     public void addFuncionarios (Funcionario funcionarios) {
         this.funcionarios.add(funcionarios);
     }

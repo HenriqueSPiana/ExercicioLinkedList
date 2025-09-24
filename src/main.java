@@ -16,8 +16,8 @@ public class main {
                     (i%2 ==0 ?DepartamentoEnum.RECURSOS_HUMANOS:DepartamentoEnum.TECNOLOGIA)));
         };
 
-
         System.out.println(departamento);
+
 
 
 
