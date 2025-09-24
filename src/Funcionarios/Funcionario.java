@@ -1,6 +1,8 @@
 package Funcionarios;
 import Departamento.DepartamentoEnum;
 
+import java.util.LinkedList;
+
 public class Funcionario {
     private int idade;
     private String nome;
@@ -42,10 +44,14 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return "Funcionario{" +
+        return "\n Funcionario{" +
                 "idade=" + idade +
                 ", nome='" + nome + '\'' +
                 ", departamento=" + departamento +
                 '}';
     }
+
+
+
+
 }
