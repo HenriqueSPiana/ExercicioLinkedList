@@ -3,6 +3,7 @@ import Departamento.DepartamentoEnum;
 import Funcionarios.Funcionario;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
@@ -16,7 +17,32 @@ public class main {
                     (i%2 ==0 ?DepartamentoEnum.RECURSOS_HUMANOS:DepartamentoEnum.TECNOLOGIA)));
         };
 
-        System.out.println(departamento);
+
+
+        try ( Scanner leitor = new Scanner(System.in);){
+
+
+            System.out.println("SISTEMA DE CADASTRO DE FUNCIONARIOS \n" +
+                    "--------------------------------\n" +
+                    "QUAL FUNÇÃO DESEJA FAZER? \n" +
+                    "1 - Cadastrar novo funcionario\n" +
+                    "2 - Buscar um funcionario\n" +
+                    "3 - Mostrar todos os funcionarios\n" +
+                    "4 - Reordenar lista de funcionario\n" +
+                    "-- SAIR--");
+            int escolha = leitor.nextInt();
+
+            switch (escolha){
+                case 1 ->
+            }
+        } catch (Exception e) {
+            System.out.println("Você escolheu sair ");
+        }
+        
+
+                
+        
+
 
 
 
