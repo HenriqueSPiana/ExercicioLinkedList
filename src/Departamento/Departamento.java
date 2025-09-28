@@ -12,6 +12,10 @@ public class Departamento {
         return listaDeFuncionarios;
     }
 
+    public void mostraTodosFuncionarios(){
+        System.out.println(getFuncionarios());
+    }
+
     public Funcionario getFuncionariosByName(String nomeFuncionario) {
         for (Funcionario f : listaDeFuncionarios){
             if (f.getNome().equalsIgnoreCase(nomeFuncionario)) {
@@ -26,7 +30,18 @@ public class Departamento {
         this.listaDeFuncionarios.add(funcionarios);
     }
 
-
+    public void procurarFuncionario(Scanner IO){
+        try{
+            System.out.println("Insira o nome do funcionario desejado");
+            String nome = IO.nextLine();
+            var f = getFuncionariosByName(nome);
+            if (f != null) {
+                System.out.println(f);
+            }
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void cadastrarFuncionario(Scanner IO){
         System.out.println("Você escolheu cadastrar um novo funcionario\n");
@@ -64,6 +79,8 @@ public class Departamento {
                 throw new RuntimeException(e);
             }
      }
+
+
     public Departamento() {
     }
 

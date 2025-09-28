@@ -33,6 +33,8 @@ public class main {
 
             switch (escolha) {
                 case 1 -> departamento.cadastrarFuncionario(IO);
+                case 2 -> departamento.procurarFuncionario(IO);
+                case 3 -> departamento.mostraTodosFuncionarios();
                 case 5 -> {
                     executar = false;
                 }
