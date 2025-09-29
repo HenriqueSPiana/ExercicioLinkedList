@@ -29,12 +29,13 @@ public class Departamento {
     public void selecionarOrdenacao(Scanner IO){
         try{
             System.out.println("Reordenar pelo oque?");
-            int selecao = IO.nextInt();
             System.out.println("---------" +
                     "1 - Ordenar Por nome\n" +
                     "2 - Ordenar por idade\n" +
                     "3 - Ordenar por Departamento\n" +
                     "4 - SAIR");
+
+            int selecao = IO.nextInt();
 
             switch (selecao){
                 case 1 -> ordenarPorNome();
@@ -49,14 +50,21 @@ public class Departamento {
     public void ordenarPorNome(){
         listaDeFuncionarios.sort(Comparator.comparing(Funcionario::getNome));
         mostraTodosFuncionarios();
+        System.out.println("Reordenado Pelo Nome");
     }
 
     public void ordenararPorIdade(){
         listaDeFuncionarios.sort(Comparator.comparingInt(Funcionario::getIdade));
+        mostraTodosFuncionarios();
+        System.out.println("Reordenado Pela Idade");
+
     }
 
     public void ordenarPorDepartamento(){
         listaDeFuncionarios.sort(Comparator.comparing(Funcionario::getDepartamento));
+        mostraTodosFuncionarios();
+        System.out.println("Reordenado Pelo Departamento");
+
     }
 
     public Funcionario getFuncionariosByName(String nomeFuncionario) {

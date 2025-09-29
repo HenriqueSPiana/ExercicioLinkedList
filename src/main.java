@@ -27,7 +27,7 @@ public class main {
                     "2 - Buscar um funcionario\n" +
                     "3 - Mostrar todos os funcionarios\n" +
                     "4 - Remover primeiro funcionario da lista\n" +
-                    "5 - Ordenar lista" +
+                    "5 - Ordenar lista\n" +
                     "6 -- SAIR--");
             int escolha = IO.nextInt();
             IO.nextLine();
