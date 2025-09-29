@@ -26,8 +26,9 @@ public class main {
                     "1 - Cadastrar novo funcionario\n" +
                     "2 - Buscar um funcionario\n" +
                     "3 - Mostrar todos os funcionarios\n" +
-                    "4 - Reordenar lista de funcionario\n" +
-                    "5 -- SAIR--");
+                    "4 - Remover primeiro funcionario da lista\n" +
+                    "5 - Ordenar lista" +
+                    "6 -- SAIR--");
             int escolha = IO.nextInt();
             IO.nextLine();
 
@@ -36,7 +37,8 @@ public class main {
                 case 2 -> departamento.procurarFuncionario(IO);
                 case 3 -> departamento.mostraTodosFuncionarios();
                 case 4 -> departamento.removerFuncionario();
-                case 5 -> {
+                case 5 -> departamento.selecionarOrdenacao(IO);
+                case 6 -> {
                     executar = false;
                 }
             }

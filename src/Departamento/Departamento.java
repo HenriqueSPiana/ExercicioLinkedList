@@ -1,5 +1,7 @@
 package Departamento;
 import Funcionarios.Funcionario;
+
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -24,16 +26,37 @@ public class Departamento {
     }
 
 
-    public void ordenarPorNome(){
+    public void selecionarOrdenacao(Scanner IO){
+        try{
+            System.out.println("Reordenar pelo oque?");
+            int selecao = IO.nextInt();
+            System.out.println("---------" +
+                    "1 - Ordenar Por nome\n" +
+                    "2 - Ordenar por idade\n" +
+                    "3 - Ordenar por Departamento\n" +
+                    "4 - SAIR");
 
+            switch (selecao){
+                case 1 -> ordenarPorNome();
+                case 2 -> ordenararPorIdade();
+                case 3 -> ordenarPorDepartamento();
+            }
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void ordenarPorNome(){
+        listaDeFuncionarios.sort(Comparator.comparing(Funcionario::getNome));
+        mostraTodosFuncionarios();
     }
 
     public void ordenararPorIdade(){
-
+        listaDeFuncionarios.sort(Comparator.comparingInt(Funcionario::getIdade));
     }
 
     public void ordenarPorDepartamento(){
-
+        listaDeFuncionarios.sort(Comparator.comparing(Funcionario::getDepartamento));
     }
 
     public Funcionario getFuncionariosByName(String nomeFuncionario) {
