@@ -35,6 +35,7 @@ public class main {
                 case 1 -> departamento.cadastrarFuncionario(IO);
                 case 2 -> departamento.procurarFuncionario(IO);
                 case 3 -> departamento.mostraTodosFuncionarios();
+                case 4 -> departamento.removerFuncionario();
                 case 5 -> {
                     executar = false;
                 }

@@ -16,6 +16,26 @@ public class Departamento {
         System.out.println(getFuncionarios());
     }
 
+
+
+    public void removerFuncionario(){
+        listaDeFuncionarios.removeFirst();
+        mostraTodosFuncionarios();
+    }
+
+
+    public void ordenarPorNome(){
+
+    }
+
+    public void ordenararPorIdade(){
+
+    }
+
+    public void ordenarPorDepartamento(){
+
+    }
+
     public Funcionario getFuncionariosByName(String nomeFuncionario) {
         for (Funcionario f : listaDeFuncionarios){
             if (f.getNome().equalsIgnoreCase(nomeFuncionario)) {
@@ -27,7 +47,7 @@ public class Departamento {
     };
 
     public void addFuncionarios (Funcionario funcionarios) {
-        this.listaDeFuncionarios.add(funcionarios);
+        this.listaDeFuncionarios.addFirst(funcionarios);
     }
 
     public void procurarFuncionario(Scanner IO){
